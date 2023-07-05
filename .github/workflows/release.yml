@@ -1,0 +1,47 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version"
+        required: true
+        default: "1.0.0"
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  version:
+    name: Create new release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Update version number
+        env:
+          VERSION: "${{ github.event.inputs.version }}"
+        run: |
+          sed -i "s/\"version\":.*/\"version\": \"$VERSION\",/" package.json
+
+      - name: Update statics
+        run: ./scripts/build-static.sh
+
+      - name: Commit & tag new version
+        env:
+          VERSION: "${{ github.event.inputs.version }}"
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          [[ -z $(git status -s) ]] || git commit -m "Bump version to $VERSION"
+          git tag -a "v$VERSION" -m "$VERSION"
+          git push --follow-tags -f
+
+      - name: Trigger build
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: build.yml
+          inputs: '{ "version": "${{ github.event.inputs.version }}"}'

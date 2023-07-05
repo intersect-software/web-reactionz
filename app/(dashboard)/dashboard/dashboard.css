@@ -1,0 +1,112 @@
+@media(max-width: 575.98px) {
+  .actionsWrapper {
+    flex-direction: column;
+  }
+}
+
+.site {
+  margin-top: 10px;
+}
+
+.site+.site {
+  border-top: 1px solid lightgrey;
+  border-radius: 0;
+}
+
+.pages {
+  display: grid;
+  column-gap: 15px;
+  row-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.page {
+  cursor: pointer;
+}
+
+.reactionCounts {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.reactionCount {
+  display: flex;
+  gap: 2px;
+  font-size: 1.2em;
+}
+
+.searchSitesInput {
+  width: 300px;
+  margin: 10px;
+}
+
+.graphDatePicker {
+  margin: 10px 0;
+}
+
+.formQuestionsGrid {
+  display: grid;
+  column-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-bottom: 20px;
+}
+
+.theme .emojis {
+  display: flex;
+  gap: 10px;
+  margin: auto;
+}
+
+.theme .emoji {
+  cursor: pointer;
+}
+
+.theme .emojis.vertical {
+  flex-direction: column;
+}
+
+.theme.vertical {
+  align-items: center;
+}
+
+.theme.bordered {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.theme.minimal {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  width: fit-content;
+  margin: auto;
+}
+
+.theme.multiline {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+}
+
+.deleteSiteBtn {
+  color: #f44336;
+  text-decoration: underline;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.copyToClipboardBtn {
+  cursor: pointer;
+}
+
+.showScriptBtn {
+  padding-left: 0;
+}
