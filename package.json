@@ -1,0 +1,50 @@
+{
+  "name": "web-reactionz",
+  "version": "1.0.0",
+  "description": "Global reactions for the Web",
+  "homepage": "https://webreactionz.com",
+  "repository": "github:intersect-software/web-reactionz",
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "build": "next build && ./scripts/build-static.sh",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start",
+    "start:prod": "npx prisma migrate deploy && node server.js"
+  },
+  "dependencies": {
+    "@auth/prisma-adapter": "^1.0.0",
+    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
+    "@next/mdx": "^13.4.7",
+    "@prisma/client": "4.15.0",
+    "@rsuite/icons": "^1.0.2",
+    "chart.js": "^4.3.0",
+    "chartjs-adapter-date-fns": "^3.0.0",
+    "date-fns": "^2.30.0",
+    "next": "13.4.4",
+    "next-auth": "^4.22.1",
+    "nodemailer": "^6.9.3",
+    "prisma": "^4.15.0",
+    "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "18.2.0",
+    "redis": "^4.6.7",
+    "rsuite": "^5.35.1",
+    "sharp": "^0.32.1",
+    "stripe": "^12.9.0",
+    "swr": "^2.1.5",
+    "unicode-emoji-json": "^0.4.0"
+  },
+  "devDependencies": {
+    "@types/mdx": "^2.0.5",
+    "@types/node": "20.2.5",
+    "@types/react": "18.2.9",
+    "@types/react-dom": "18.2.4",
+    "eslint": "8.42.0",
+    "eslint-config-next": "13.4.4",
+    "minify": "^10.2.0",
+    "terser": "^5.18.1",
+    "typescript": "5.1.3"
+  }
+}

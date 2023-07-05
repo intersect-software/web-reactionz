@@ -1,0 +1,39 @@
+export const meta = {
+  title: "Using Web Reactionz with Ghost",
+  description:
+    "Learn how to get reactions on your Ghost blog posts in just a minute!",
+  date: "2023-07-02",
+  slug: "using-with-ghost",
+  tags: ["guide"],
+};
+
+Web Reactionz seamlessly integrates with your Ghost blog, allowing you to enhance user engagement and gather valuable insights. Follow these quick steps to set up the Web Reactionz widget and unlock the power of audience reactions for your Ghost blog's success.
+
+#### Register with Web Reactionz
+
+First, [register for a free account](/login). Or, you could choose to [self-host](https://github.com/intersect-software/web-reactionz) the platform.
+
+#### Create your site
+
+1. In your [dashboard](/dashboard), click the "Create new site?" button.
+2. Enter your blog's domain (e.g., `blog.domain.com`), and click "Next".
+3. Copy the code snippet provided (which looks like `<script src=...>`).
+
+#### Add the Web Reactionz widget code to your Ghost blog
+
+1. Log in to your Ghost blog's admin panel (usually at `blog.domain.com/ghost`).
+2. Click the settings/cogs icon at the bottom left.
+3. Navigate to the "Code Injection" or "Site Header" option (usually in the "Advanced" section of Settings)
+4. Paste the Web Reactionz JavaScript code snippet from earlier in the "Site Footer" textbox.
+
+#### Customize and Position Your Web Reactionz Widget
+
+Back in your [dashboard](/dashboard), you can now configure exactly how you want your widget to look, so it matches your blog design. See [Styling the Web Reactionz widget](/blog/styles) for more details.
+
+You **must** configure the "HTML DOM Selector" and "Emojis" options at a minimum. For Ghost, the DOM selector will depend on the theme you use. Some themes use the `.gh-content` class for the main blog content. If you're not sure, right click the first paragraph of your blog post, click "Inspect Element", and copy the selector from the window that pops up!
+
+Note: If you want to use the left/right (fixed) position for your reactions widget, we recommend setting the DOM Selector to be the first paragraph of your blog post, to make it fit alongside your blog better. To do this, set your DOM Selector to be `.gh-content :first-child` (replacing `.gh-content` with the selector appropriate for your theme).
+
+#### Monitor and Analyze Reactions
+
+Click on any page in your dashboard to track and analyze reactions over time or per day.

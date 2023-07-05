@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+
+:root {
+  --main-color: #ff595e;
+  --accent-color: #6A4C93;
+}
+
+nav {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid lightgrey;
+}
+
+nav.staticNavLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+nav.staticNavLinks a {
+  margin-left: 10px;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body {
+  padding: 0 10px;
+  margin: auto !important;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  max-width: 95%;
+}
+
+main {
+  flex: 1;
+  max-width: 1000px;
+  padding: 5vmin 0;
+  width: 100%;
+  margin: auto;
+}
+
+main.landing {
+  margin: auto;
+}
+
+main.narrow {
+  margin: auto;
+  max-width: 720px;
+}
+
+main.prose {
+  margin: auto;
+  max-width: 720px;
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+
+main.prose p {
+  font-size: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--main-color) !important;
+  font-family: 'Exo 2', sans-serif !important;
+}
+
+nav .navBtn {
+  height: 35px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .slideInContainer {
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 750ms all ease;
+    max-width: 1500px;
+    margin: auto;
+  }
+
+  .slideInContainer.animate {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.rs-btn-ghost {
+  border-color: var(--main-color) !important;
+}
+
+.rs-btn-primary {
+  background-color: var(--main-color) !important;
+}
+
+.rs-btn-icon-with-text.rs-btn-primary>.rs-icon {
+  background-color: #ff4045 !important;
+}
+
+.rs-toast-container {
+  pointer-events: all !important;
+  cursor: pointer !important;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  text-wrap: balance;
+  padding: 1em 0;
+}
+
+footer .links {
+  display: grid;
+  column-gap: 15px;
+  row-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  align-items: center;
+}
+
+footer .links>div {
+  display: flex;
+  flex-direction: column;
+}
+
+footer .companyDetails {
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+
+.rs-picker-toggle-value .rs-picker-value-list {
+  white-space: normal;
+  line-height: 1.5;
+  font-size: 1.5em;
+}
+
+.rs-picker-toggle-value {
+  align-items: center;
+}
+
+.rs-picker-toggle-value .rs-picker-value-count {
+  font-size: 1em;
+  padding: 5px;
+}
+
+.rs-message {
+  margin-bottom: 1em;
+}
+
+pre {
+  white-space: pre-wrap;
+  line-height: 1.8;
+}
+
+.docs {
+  font-size: 1.2em;
+}
