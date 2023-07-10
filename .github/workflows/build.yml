@@ -53,3 +53,6 @@ jobs:
             BUILD_SITE_ID=${{ secrets.BUILD_SITE_ID }}
             BUILD_ANALYTICS_URL=${{ secrets.BUILD_ANALYTICS_URL }}
             BUILD_ANALYTICS_SITE_ID=${{ secrets.BUILD_ANALYTICS_SITE_ID }}
+            BUILD_PAPERCUPS_TOKEN=${{ secrets.BUILD_PAPERCUPS_TOKEN }}
+            BUILD_PAPERCUPS_INBOX=${{ secrets.BUILD_PAPERCUPS_INBOX }}
+            BUILD_PAPERCUPS_URL=${{ secrets.BUILD_PAPERCUPS_URL }}

@@ -27,6 +27,29 @@ export default function RootLayout({
             data-website-id={process.env.NEXT_PUBLIC_ANALYTICS_SITE_ID}
           />
         )}
+        {typeof process.env.NEXT_PUBLIC_PAPERCUPS_TOKEN !== "undefined" && (
+          <>
+            <Script
+              id="papercups"
+              dangerouslySetInnerHTML={{
+                __html: `window.Papercups = {
+                  config: {
+                    token: "${process.env.NEXT_PUBLIC_PAPERCUPS_TOKEN}",
+                    inbox: "${process.env.NEXT_PUBLIC_PAPERCUPS_INBOX}",
+                    title: "Welcome to Web Reactionz",
+                    subtitle: "Ask us anything in the chat window below 😊",
+                    primaryColor: "#ff595e",
+                    requireEmailUpfront: true,
+                    baseUrl: "${process.env.NEXT_PUBLIC_PAPERCUPS_URL}"
+                  },
+                };`,
+              }}
+            />
+            <Script
+              src={`${process.env.NEXT_PUBLIC_PAPERCUPS_URL}/widget.js`}
+            />
+          </>
+        )}
       </body>
     </html>
   );
