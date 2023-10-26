@@ -5,19 +5,22 @@ import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
   const session = await getServerAuthSession();
-  if (!session) return NextResponse.redirect("/");
+  if (!session) return NextResponse.redirect(process.env.BASE_URL!);
 
   const user = await db.user.findFirst({
     where: { id: session.user.id },
     select: { stripeCustomerId: true },
   });
-  if (!user?.stripeCustomerId) return NextResponse.redirect("/");
+
+  if (!user?.stripeCustomerId) {
+    return NextResponse.redirect(process.env.BASE_URL!);
+  }
 
   const portalSession = await stripe.billingPortal.sessions.create({
     customer: user.stripeCustomerId,
     return_url: process.env.BASE_URL,
   });
 
-  if (!portalSession.url) return NextResponse.redirect("/");
+  if (!portalSession.url) return NextResponse.redirect(process.env.BASE_URL!);
   return NextResponse.redirect(portalSession.url);
 }

@@ -8,8 +8,9 @@ export async function GET(request: Request) {
   const session = await getServerAuthSession();
   if (!session) {
     return NextResponse.redirect(
-      "/auth/login?callbackUrl=" +
-        encodeURIComponent(`${process.env.BASE_URL}/auth/stripe/checkout`)
+      `${process.env.BASE_URL}/auth/login?callbackUrl=${encodeURIComponent(
+        `${process.env.BASE_URL}/auth/stripe/checkout`
+      )}`
     );
   }
 
@@ -43,6 +44,6 @@ export async function GET(request: Request) {
     cancel_url: process.env.BASE_URL,
   });
 
-  if (!checkoutSession.url) return NextResponse.redirect("/");
+  if (!checkoutSession.url) return NextResponse.redirect(process.env.BASE_URL!);
   return NextResponse.redirect(checkoutSession.url);
 }
