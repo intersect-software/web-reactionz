@@ -2,7 +2,7 @@ export default function Terms() {
   return (
     <main className="prose">
       <h2>Terms of Service</h2>
-      <p>Date Effective: 1 July 2023</p>
+      <p>Date Effective: 29 June 2024</p>
       <h4>
         1. <strong>Introduction</strong>
       </h4>
@@ -237,8 +237,7 @@ export default function Terms() {
         Web Reactionz and its licensors. Service is protected by copyright,
         trademark, and other laws of the United Kingdom and foreign countries.
         Our trademarks and trade dress may not be used in connection with any
-        product or service without the prior written consent of Northstar
-        Search.
+        product or service without the prior written consent of Web Reactionz.
       </p>
       <h4>
         9. <strong>Error Reporting and Feedback</strong>
