@@ -13,19 +13,19 @@ export default function LoginForm({ csrfToken }: { csrfToken: string }) {
         ref={ref}
         method="post"
         action="/api/auth/signin/email"
-        onSubmit={(_, event) => {
+        onSubmit={() => {
           if (!ref?.current?.check()) {
             return;
           }
 
-          const target = event.target as HTMLFormElement;
-          if (!target.tos.value) {
+          const form = ref.current.root as HTMLFormElement;
+          if (!form.tos.value) {
             return window.alert(
               "You must accept the Terms of Service and Privacy Policy before logging in or registering"
             );
           }
 
-          signIn("email", { email: target.email.value });
+          signIn("email", { email: form.email.value });
         }}
       >
         <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
